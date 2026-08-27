@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cewey1i55bl7k"]
+
+[ext_resource type="Script" uid="uid://b6mlfffnfqrl6" path="res://scripts/puzzle_zodiac.gd" id="1_r8htj"]
+[ext_resource type="Texture2D" uid="uid://b6ici1s6ik3yn" path="res://image/puzzle/PTA기본배경.png" id="1_u4nmf"]
+[ext_resource type="Texture2D" uid="uid://qjmxafouvpg2" path="res://image/puzzle/스크롤보드.png" id="2_r8htj"]
+[ext_resource type="Texture2D" uid="uid://bqr23xu1s7brw" path="res://image/piece/Zodiac/1_1.png" id="5_078gq"]
+[ext_resource type="FontFile" uid="uid://b0d1bcb8kundh" path="res://text_editor_themes/HakgyoansimBareonbatangB.ttf" id="6_8amsb"]
+[ext_resource type="PackedScene" uid="uid://cec587lw4yjoa" path="res://scene/pause_menu.tscn" id="7_pause"]
+[ext_resource type="Texture2D" uid="uid://qkaj1j6lb3my" path="res://image/newpuzzle/퍼즐판_조디악.png" id="8_ark0j"]
+[ext_resource type="PackedScene" path="res://scene/completion_popup.tscn" id="9_complete"]
+
+[node name="PuzzleZodiac" type="Node2D" unique_id=435569028]
+script = ExtResource("1_r8htj")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2063508274]
+position = Vector2(960, 540)
+texture = ExtResource("1_u4nmf")
+
+[node name="panel" type="Sprite2D" parent="." unique_id=955788448]
+position = Vector2(1579.6251, 543)
+scale = Vector2(1.5190636, 1.049074)
+texture = ExtResource("2_r8htj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2080039399]
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=936725091]
+offset_left = 290.0
+offset_top = 95.0
+offset_right = 455.0
+offset_bottom = 273.0
+texture_normal = ExtResource("5_078gq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1559368279]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1145000700]
+offset_left = 870.0
+offset_top = 5.0
+offset_right = 1350.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.2, 0.13, 0.08, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.95, 0.82, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("6_8amsb")
+theme_override_font_sizes/font_size = 48
+text = "00:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenu" parent="." unique_id=2054660235 instance=ExtResource("7_pause")]
+
+[node name="CompletionPopup" parent="." unique_id=1642845534 instance=ExtResource("9_complete")]
+
+[node name="newpuzzleboard" type="Sprite2D" parent="." unique_id=2135840687]
+position = Vector2(615, 533)
+texture = ExtResource("8_ark0j")

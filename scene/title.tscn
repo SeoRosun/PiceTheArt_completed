@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://o7da3pnm73tt"]
+
+[ext_resource type="Script" uid="uid://dtxtmae28u50s" path="res://scripts/title.gd" id="1_ycsd2"]
+[ext_resource type="Texture2D" uid="uid://dph3lupeqnnt4" path="res://image/title/타이틀배경.png" id="2_qaeh8"]
+[ext_resource type="Texture2D" uid="uid://bef4bpyqwf87p" path="res://image/title/PTA시작하기.png" id="3_qaeh8"]
+[ext_resource type="Texture2D" uid="uid://c5pgt5a5vutfy" path="res://image/title/PTA종료하기.png" id="4_ycsd2"]
+
+[node name="Title" type="Node2D" unique_id=1872445709]
+script = ExtResource("1_ycsd2")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1042929189]
+position = Vector2(961.1292, 523.75006)
+scale = Vector2(0.9991068, 0.9911017)
+texture = ExtResource("2_qaeh8")
+
+[node name="start" type="Button" parent="." unique_id=759188706]
+offset_left = 1361.0
+offset_top = 662.0
+offset_right = 1669.0
+offset_bottom = 799.0
+icon = ExtResource("3_qaeh8")
+flat = true
+
+[node name="exit" type="Button" parent="." unique_id=720742849]
+offset_left = 1361.0
+offset_top = 831.0
+offset_right = 1669.0
+offset_bottom = 968.0
+icon = ExtResource("4_ycsd2")
+flat = true
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

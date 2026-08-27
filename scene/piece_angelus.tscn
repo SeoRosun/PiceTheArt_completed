@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://hfqt3xuscy8e"]
+
+[ext_resource type="Texture2D" uid="uid://cdcox0xkc4g1t" path="res://image/newpuzzle/An/1_1.png" id="1_aer6n"]
+[ext_resource type="Script" uid="uid://n2bwmfpdsp3o" path="res://scripts/piece_angelus.gd" id="2_aer6n"]
+
+[node name="TextureButton" type="TextureButton" unique_id=1238226972]
+offset_right = 180.0
+offset_bottom = 150.0
+texture_normal = ExtResource("1_aer6n")
+script = ExtResource("2_aer6n")

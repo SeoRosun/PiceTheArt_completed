@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bbvtsnoev00ax"]
+
+[ext_resource type="Texture2D" uid="uid://ocfyfucckr4w" path="res://image/newpuzzle/Zo/1_1.png" id="1_v2uh6"]
+[ext_resource type="Script" uid="uid://cmhai526d45i2" path="res://scripts/piece_zodiac.gd" id="2_smw21"]
+
+[node name="PieceZodiac" type="TextureButton" unique_id=225319935]
+offset_right = 130.0
+offset_bottom = 125.0
+ignore_texture_size = true
+texture_normal = ExtResource("1_v2uh6")
+script = ExtResource("2_smw21")

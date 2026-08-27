@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/completion_popup.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://image/puzzle/완성팝업.png" id="2_popup"]
+[ext_resource type="Texture2D" path="res://image/puzzle/다시하기.png" id="3_retry"]
+[ext_resource type="Texture2D" path="res://image/puzzle/선택으로.png" id="4_select"]
+[ext_resource type="FontFile" path="res://text_editor_themes/HakgyoansimBareonbatangB.ttf" id="5_font"]
+
+[node name="CompletionPopup" type="CanvasLayer"]
+process_mode = 3
+layer = 20
+script = ExtResource("1_script")
+
+[node name="CompletionOverlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup" type="TextureRect" parent="CompletionOverlay"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 1940.0
+offset_bottom = 1106.0
+mouse_filter = 2
+texture = ExtResource("2_popup")
+
+[node name="CompletionTimeLabel" type="Label" parent="CompletionOverlay"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 500.0
+offset_right = 1360.0
+offset_bottom = 590.0
+theme_override_colors/font_color = Color(0.08, 0.055, 0.035, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.95, 0.82, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 48
+text = "완성 시간  00:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="TextureButton" parent="CompletionOverlay"]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 641.0
+offset_right = 935.0
+offset_bottom = 770.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("3_retry")
+
+[node name="SelectButton" type="TextureButton" parent="CompletionOverlay"]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 641.0
+offset_right = 1315.0
+offset_bottom = 770.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("4_select")
+
+[connection signal="pressed" from="CompletionOverlay/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="CompletionOverlay/SelectButton" to="." method="_on_select_button_pressed"]

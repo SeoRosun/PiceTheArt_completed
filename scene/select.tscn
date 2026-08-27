@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dtss2ue26c3v6"]
+
+[ext_resource type="Texture2D" uid="uid://b6ici1s6ik3yn" path="res://image/puzzle/PTA기본배경.png" id="1_3o8f1"]
+[ext_resource type="Script" uid="uid://bfs6nkkpwo1eo" path="res://scripts/select.gd" id="1_ev2xh"]
+[ext_resource type="Texture2D" uid="uid://dxi8c1fcdkf3e" path="res://image/select/아이콘_만종.png" id="2_nxram"]
+[ext_resource type="Texture2D" uid="uid://ddsff3abphffx" path="res://image/select/아이콘_만종_맞추기.png" id="3_ev2xh"]
+[ext_resource type="Texture2D" uid="uid://ivktv43wy5ke" path="res://image/select/아이콘_황도12궁.png" id="4_2hoit"]
+[ext_resource type="Texture2D" uid="uid://bikrlp0014gii" path="res://image/select/아이콘_황도12궁_맞추기.png" id="5_2qsau"]
+[ext_resource type="Texture2D" uid="uid://c4g0kp7miqadi" path="res://image/select/아이콘_오베르밀밭.png" id="6_xnlak"]
+[ext_resource type="Texture2D" uid="uid://xkpqapn5g7ov" path="res://image/select/아이콘_오베르밀밭_맞추기.png" id="7_8qepy"]
+[ext_resource type="Texture2D" uid="uid://b1ablmihsc4x2" path="res://image/select/만종설명.png" id="8_d0w8q"]
+[ext_resource type="Texture2D" uid="uid://crm70bbvowvbv" path="res://image/select/조디악설명.png" id="9_j2fr0"]
+[ext_resource type="Texture2D" uid="uid://dx3gr7fryd0ln" path="res://image/select/오베르설명.png" id="10_gk4id"]
+[ext_resource type="Texture2D" uid="uid://c45pugfokjy41" path="res://image/select/타이틀로.png" id="11_nxram"]
+
+[node name="select" type="Node2D" unique_id=1154124524]
+script = ExtResource("1_ev2xh")
+
+[node name="background" type="Sprite2D" parent="." unique_id=987779505]
+position = Vector2(960, 540)
+texture = ExtResource("1_3o8f1")
+
+[node name="Angelus" type="TextureButton" parent="." unique_id=724297669]
+offset_left = 169.0
+offset_top = 270.0
+offset_right = 644.0
+offset_bottom = 655.0
+texture_normal = ExtResource("2_nxram")
+texture_hover = ExtResource("3_ev2xh")
+
+[node name="Zodiac" type="TextureButton" parent="." unique_id=208694726]
+offset_left = 783.0
+offset_top = 241.0
+offset_right = 1138.0
+offset_bottom = 690.0
+texture_normal = ExtResource("4_2hoit")
+texture_hover = ExtResource("5_2qsau")
+
+[node name="Auvers" type="TextureButton" parent="." unique_id=1204429161]
+offset_left = 1293.0
+offset_top = 273.0
+offset_right = 1773.0
+offset_bottom = 653.0
+texture_normal = ExtResource("6_xnlak")
+texture_hover = ExtResource("7_8qepy")
+
+[node name="An" type="Sprite2D" parent="." unique_id=1664492152]
+position = Vector2(407, 830)
+texture = ExtResource("8_d0w8q")
+
+[node name="Zo" type="Sprite2D" parent="." unique_id=981774435]
+position = Vector2(960, 830)
+texture = ExtResource("9_j2fr0")
+
+[node name="Au" type="Sprite2D" parent="." unique_id=1154009373]
+position = Vector2(1529, 830)
+texture = ExtResource("10_gk4id")
+
+[node name="BackTitle" type="Button" parent="." unique_id=1930973830]
+offset_left = 81.0
+offset_top = 59.0
+offset_right = 389.0
+offset_bottom = 196.0
+icon = ExtResource("11_nxram")
+flat = true
+
+[connection signal="pressed" from="Angelus" to="." method="_on_angelus_pressed"]
+[connection signal="pressed" from="Zodiac" to="." method="_on_zodiac_pressed"]
+[connection signal="pressed" from="Auvers" to="." method="_on_auvers_pressed"]
+[connection signal="pressed" from="BackTitle" to="." method="_on_back_title_pressed"]

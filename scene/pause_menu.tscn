@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cec587lw4yjoa"]
+
+[ext_resource type="Script" uid="uid://davxy23bof0bj" path="res://scripts/pause_menu.gd" id="1_pause"]
+[ext_resource type="Texture2D" uid="uid://cnmc0q8od5dnf" path="res://image/puzzle/일시정지버튼.png" id="2_pause"]
+[ext_resource type="Texture2D" uid="uid://do1vib2kyid78" path="res://image/puzzle/정지팝업2.png" id="3_4q2vw"]
+[ext_resource type="Texture2D" uid="uid://c7nyetf3m1owe" path="res://image/puzzle/계속하기.png" id="4_continue"]
+[ext_resource type="Texture2D" uid="uid://pfrrrvu4etyq" path="res://image/puzzle/그만하기.png" id="5_quit"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=891083561]
+process_mode = 3
+layer = 10
+script = ExtResource("1_pause")
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=1824186823]
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 130.0
+offset_bottom = 140.0
+texture_normal = ExtResource("2_pause")
+
+[node name="PauseOverlay" type="Control" parent="." unique_id=1444744255]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup2" type="TextureRect" parent="PauseOverlay" unique_id=43447035]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 1940.0
+offset_bottom = 1106.0
+mouse_filter = 2
+texture = ExtResource("3_4q2vw")
+
+[node name="ContinueButton" type="TextureButton" parent="PauseOverlay" unique_id=2005184480]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 641.0
+offset_right = 935.0
+offset_bottom = 770.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("4_continue")
+
+[node name="QuitButton" type="TextureButton" parent="PauseOverlay" unique_id=238260483]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 641.0
+offset_right = 1315.0
+offset_bottom = 770.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("5_quit")
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseOverlay/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="PauseOverlay/QuitButton" to="." method="_on_quit_button_pressed"]

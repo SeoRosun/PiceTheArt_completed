@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://1x1voh4hw60k"]
+
+[ext_resource type="Script" uid="uid://kly4up1sbcx5" path="res://scene/puzzle.gd" id="1_f36ja"]
+[ext_resource type="Texture2D" uid="uid://b6ici1s6ik3yn" path="res://image/PTA기본배경.png" id="2_tt8dv"]
+[ext_resource type="Texture2D" uid="uid://cs64fsai8bd4b" path="res://image/만종퍼즐판_20260812164059.png" id="3_j0p7r"]
+
+[node name="puzzle" type="Node2D" unique_id=1517223166]
+script = ExtResource("1_f36ja")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=55054174]
+position = Vector2(960, 540)
+texture = ExtResource("2_tt8dv")
+
+[node name="PuzzleBoard" type="Sprite2D" parent="." unique_id=1099896578]
+position = Vector2(715, 540)
+texture = ExtResource("3_j0p7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1533209953]

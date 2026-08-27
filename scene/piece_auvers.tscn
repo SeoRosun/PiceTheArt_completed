@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbmj75ro36tys"]
+
+[ext_resource type="Texture2D" uid="uid://cbk3prswa5ktn" path="res://image/newpuzzle/Au/1_1.png" id="1_piece"]
+[ext_resource type="Script" uid="uid://doc3sehjbsyi6" path="res://scripts/piece_auvers.gd" id="2_script"]
+
+[node name="PieceAuvers" type="TextureButton" unique_id=1357328455]
+offset_right = 110.0
+offset_bottom = 115.0
+ignore_texture_size = true
+texture_normal = ExtResource("1_piece")
+script = ExtResource("2_script")

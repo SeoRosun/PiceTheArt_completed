@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b7ck47y4fkudt"]
+
+[ext_resource type="Script" uid="uid://opjr5qdxso6o" path="res://scripts/puzzle_auvers.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b6ici1s6ik3yn" path="res://image/puzzle/PTA기본배경.png" id="1_vgfuh"]
+[ext_resource type="Texture2D" uid="uid://qjmxafouvpg2" path="res://image/puzzle/스크롤보드.png" id="2_panel"]
+[ext_resource type="Texture2D" uid="uid://bucrjei6uwdof" path="res://image/newpuzzle/퍼즐판_오베르.png" id="3_board"]
+[ext_resource type="FontFile" uid="uid://b0d1bcb8kundh" path="res://text_editor_themes/HakgyoansimBareonbatangB.ttf" id="4_font"]
+[ext_resource type="PackedScene" uid="uid://cec587lw4yjoa" path="res://scene/pause_menu.tscn" id="5_pause"]
+[ext_resource type="PackedScene" path="res://scene/completion_popup.tscn" id="6_complete"]
+
+[node name="PuzzleAuvers" type="Node2D" unique_id=163650868]
+script = ExtResource("1_script")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1642997771]
+position = Vector2(965, 541)
+texture = ExtResource("1_vgfuh")
+
+[node name="PuzzleBoard" type="Sprite2D" parent="." unique_id=795179974]
+position = Vector2(633, 542)
+texture = ExtResource("3_board")
+
+[node name="panel" type="Sprite2D" parent="." unique_id=1558692145]
+position = Vector2(1579.6251, 543)
+scale = Vector2(1.5190636, 1.049074)
+texture = ExtResource("2_panel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=553569513]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=548786110]
+offset_left = 870.0
+offset_top = 5.0
+offset_right = 1350.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.2, 0.13, 0.08, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.95, 0.82, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 48
+text = "00:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenu" parent="." unique_id=1756066490 instance=ExtResource("5_pause")]
+
+[node name="CompletionPopup" parent="." unique_id=230494495 instance=ExtResource("6_complete")]
